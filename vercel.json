@@ -1,17 +1,19 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "**/*.html", "use": "@vercel/static" },
-    { "src": "**/*.css", "use": "@vercel/static" },
-    { "src": "**/*.js", "use": "@vercel/static" },
-    { "src": "**/*.xml", "use": "@vercel/static" },
-    { "src": "**/*.txt", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" }
-  ],
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "functions": {
+    "app/**/*.tsx": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
-    { "source": "/privacypolicy", "destination": "/privacypolicy.html" },
-    { "source": "/termsofuse", "destination": "/termsofuse.html" },
-    { "source": "/refundpolicy", "destination": "/refundpolicy.html" },
-    { "source": "/blog", "destination": "/blog/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
   ]
 }
