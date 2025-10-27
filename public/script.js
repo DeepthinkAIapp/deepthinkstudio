@@ -1,0 +1,1 @@
+I:/deepthinkstudio/script.js

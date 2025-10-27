@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "**/*.html", "use": "@vercel/static" },
+    { "src": "**/*.css", "use": "@vercel/static" },
+    { "src": "**/*.js", "use": "@vercel/static" },
+    { "src": "**/*.xml", "use": "@vercel/static" },
+    { "src": "**/*.txt", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" }
+  ],
+  "rewrites": [
+    { "source": "/privacypolicy", "destination": "/privacypolicy.html" },
+    { "source": "/termsofuse", "destination": "/termsofuse.html" },
+    { "source": "/refundpolicy", "destination": "/refundpolicy.html" },
+    { "source": "/blog", "destination": "/blog/index.html" }
+  ]
+}
